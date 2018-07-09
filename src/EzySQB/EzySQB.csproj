@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <IsPackable>True</IsPackable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>EzySQB</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Pedro Pereira</Authors>
+    <Product>EzySQB</Product>
+    <Description>A simple and small library to create SQL queries with fluent interface. No drivers, connections, ORMs - simply assembled to string.</Description>
+    <RepositoryUrl>https://github.com/ezypeeze/ezy-sqb</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/ezypeeze/ezy-sqb</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/ezypeeze/ezy-sqb/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/ezypeeze/ezy-sqb/master/docs/ezysqb_logo_64x64.ico</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+  </ItemGroup>
+
+</Project>

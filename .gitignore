@@ -1,0 +1,20 @@
+# Debug and bin
+bin
+obj
+
+# NuGet Packages
+*.nupkg
+
+# Logs
+*.log
+
+# Editors
+.vscode
+.idea
+
+# OS generated files #
+.DS_Store*
+Icon?
+
+# Scripts - Self Docs
+nuget_publish.md
