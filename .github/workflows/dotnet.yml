@@ -37,5 +37,5 @@ jobs:
       - run: dotnet restore ./src/EzySQB/EzySQB.csproj
       - run: dotnet build --no-restore ./src/EzySQB/EzySQB.csproj
       - run: dotnet pack --no-build /p:PackageVersion=${{github.event.inputs.version}} ./src/EzySQB/EzySQB.csproj 
-      - run: dotnet nuget add source --name "GitHub" --source "https://nuget.pkg.github.com/ezypeeze/ezysqb/index.json" --username ezypeeze --pasword ${{secrets.GITHUB_TOKEN}}
-      - run: dotnet push "EzySQB.${{github.event.inputs.version}}.nupkg" --source "GitHub" --api-key ${{secrets.GITHUB_TOKEN}}
+      - run: dotnet nuget add source https://nuget.pkg.github.com/ezypeeze/ezysqb/index.json --name GitHub  --username ezypeeze --password ${{secrets.GITHUB_TOKEN}}
+      - run: dotnet push "EzySQB.${{github.event.inputs.version}}.nupkg" --source GitHub --api-key ${{secrets.GITHUB_TOKEN}}
