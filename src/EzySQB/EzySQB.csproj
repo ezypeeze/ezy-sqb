@@ -16,4 +16,8 @@
     <PackageIconUrl>https://raw.githubusercontent.com/ezypeeze/ezy-sqb/master/docs/ezysqb_logo_64x64.ico</PackageIconUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+
 </Project>
