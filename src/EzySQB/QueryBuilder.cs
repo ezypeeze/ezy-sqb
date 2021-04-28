@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using EzySQB.Formatters;
-using EzySQB.Clauses;
+﻿using System.Collections.Generic;
 using EzySQB.Statements;
 using EzySQB.Contracts;
 

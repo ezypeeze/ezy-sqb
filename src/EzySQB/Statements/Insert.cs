@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using EzySQB.Contracts;
 using EzySQB.Exceptions;
-using EzySQB.Formatters;
 
 namespace EzySQB.Statements
 {

@@ -6,7 +6,7 @@ using EzySQB.Statements;
 using Xunit;
 
 
-namespace EzySQBTests
+namespace EzySQB.Tests
 {
     public class UpdateTest : TestBase
     {

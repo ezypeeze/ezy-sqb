@@ -14,11 +14,6 @@
     <PackageProjectUrl>https://github.com/ezypeeze/ezy-sqb</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/ezypeeze/ezy-sqb/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/ezypeeze/ezy-sqb/master/docs/ezysqb_logo_64x64.ico</PackageIconUrl>
-    <PackageReleaseNotes>Removed unnecessary System.Collections.Immutable package.</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-  </ItemGroup>
 
 </Project>

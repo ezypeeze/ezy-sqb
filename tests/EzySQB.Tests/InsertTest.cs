@@ -5,7 +5,7 @@ using EzySQB.Clauses;
 using EzySQB.Statements;
 using Xunit;
 
-namespace EzySQBTests
+namespace EzySQB.Tests
 {
     public class InsertTest : TestBase
     {

@@ -2,7 +2,7 @@ using EzySQB;
 using EzySQB.Clauses;
 using EzySQB.Formatters;
 
-namespace EzySQBTests
+namespace EzySQB.Tests
 {
     abstract public class TestBase
     {
