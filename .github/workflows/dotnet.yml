@@ -22,7 +22,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - run: dotnet restore ./src/EzySQB/EzySQB.csproj
-    - run: dotnet build --no-restore ./src/EzySQB/EzySQB.csproj
+    - run: dotnet build --no-restore ./src/EzySQB/EzySQB.csproj --configuration Release
     - run: dotnet test --no-build --verbosity normal ./tests/EzySQB.Tests/EzySQB.Tests.csproj
 
   publish-package:
@@ -35,7 +35,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
       - run: dotnet restore ./src/EzySQB/EzySQB.csproj
-      - run: dotnet build --no-restore ./src/EzySQB/EzySQB.csproj
-      - run: dotnet pack --no-build /p:PackageVersion=${{github.event.inputs.version}} ./src/EzySQB/EzySQB.csproj 
-      - run: dotnet nuget add source https://nuget.pkg.github.com/ezypeeze/ezysqb/index.json --name GitHub  --username ezypeeze -p ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text
-      - run: dotnet push "EzySQB.${{github.event.inputs.version}}.nupkg" --source GitHub --api-key ${{secrets.GITHUB_TOKEN}}
+      - run: dotnet build --no-restore ./src/EzySQB/EzySQB.csproj --configuration Release
+      - run: dotnet pack --no-build /p:PackageVersion=${{github.event.inputs.version}} ./src/EzySQB/EzySQB.csproj  --configuration Release
+      - run: dotnet nuget add source https://nuget.pkg.github.com/ezypeeze/ezysqb/index.json --name GitHub  --username ezypeeze --password ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text
+      - run: dotnet nuget push "EzySQB.${{github.event.inputs.version}}.nupkg" --source GitHub --api-key ${{secrets.GITHUB_TOKEN}}
