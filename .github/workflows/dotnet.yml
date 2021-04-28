@@ -5,12 +5,16 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Define a version for publish'     
+        required: false
+        default: ''
 
 jobs:
-  build:
-
+  build-and-test:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -23,3 +27,16 @@ jobs:
       run: dotnet build --no-restore ./src/EzySQB/EzySQB.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal ./tests/EzySQB.Tests/EzySQB.Tests.csproj
+
+  publish-package:
+    if: ${{ github.event.inputs.version != '' }}
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - run: dotnet pack --no-build /p:PackageVersion=${{github.event.inputs.version}} ./src/EzySQB/EzySQB.csproj 
+      - run: dotnet nuget add source --name "GitHub" --source "https://nuget.pkg.github.com/ezypeeze/ezysqb/index.json" --username ezypeeze --pasword ${{secrets.GITHUB_TOKEN}}
+      - run: dotnet push "EzySQB.${{github.event.inputs.version}}.nupkg" --source "GitHub" --api-key ${{secrets.GITHUB_TOKEN}}

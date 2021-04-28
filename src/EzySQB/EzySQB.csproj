@@ -5,7 +5,6 @@
     <IsPackable>True</IsPackable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>EzySQB</PackageId>
-    <Version>0.0.3</Version>
     <Authors>Pedro Pereira</Authors>
     <Product>EzySQB</Product>
     <Description>A simple and small library to create SQL queries with fluent interface. No drivers, connections, ORMs - simply assembled to string.</Description>
